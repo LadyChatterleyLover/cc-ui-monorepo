@@ -2,6 +2,9 @@
   "name": "cc-ui",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
   "scripts": {
     "test": "vitest",
@@ -9,11 +12,9 @@
     "dev": "pnpm -C play dev",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 && pretty-quick --check --branch main",
     "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json && pretty-quick --branch main",
-    "lint:style": "stylelint --fix \"packages/**/*.{css,scss}\""
+    "lint:style": "stylelint --fix \"packages/**/*.{css,scss}\"",
+    "postinstall": "husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@cc-ui/components": "workspace:*",
     "@cc-ui/hooks": "workspace:*",
@@ -22,6 +23,8 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@element-plus/eslint-config": "^0.0.20220801",
     "@vicons/antd": "^0.12.0",
     "@vicons/fluent": "^0.12.0",
@@ -32,12 +35,15 @@
     "@vitejs/plugin-vue": "^3.0.1",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
     "@vue/test-utils": "^2.0.2",
+    "commitlint": "^17.0.3",
+    "cz-customizable": "^6.9.1",
     "eslint": "^8.21.0",
     "eslint-define-config": "^1.6.0",
     "husky": "^7.0.4",
     "jsdom": "^20.0.0",
-    "lint-staged": "^11.0.0",
+    "lint-staged": "^11.2.6",
     "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
     "sass": "^1.54.0",
     "sass-loader": "^13.0.2",
     "stylelint": "^13.13.1",
@@ -51,5 +57,8 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
   }
 }
