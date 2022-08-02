@@ -10,8 +10,8 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "dev": "pnpm -C play dev",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 && pretty-quick --check --branch main",
-    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json && pretty-quick --branch main",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 && pretty-quick --check",
+    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json && pretty-quick",
     "lint:style": "stylelint --fix \"packages/**/*.{css,scss}\"",
     "postinstall": "husky install"
   },
@@ -23,6 +23,7 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@cc-ui/theme-chalk": "workspace:^1.0.0",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@element-plus/eslint-config": "^0.0.20220801",

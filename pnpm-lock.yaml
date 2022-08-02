@@ -5,6 +5,7 @@ importers:
     specifiers:
       '@cc-ui/components': workspace:*
       '@cc-ui/hooks': workspace:*
+      '@cc-ui/theme-chalk': workspace:^1.0.0
       '@cc-ui/utils': workspace:*
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
@@ -44,6 +45,7 @@ importers:
       typescript: 4.7.4
       vue: 3.2.37
     devDependencies:
+      '@cc-ui/theme-chalk': link:packages/theme-chalk
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
       '@element-plus/eslint-config': 0.0.20220801_eslint@8.21.0

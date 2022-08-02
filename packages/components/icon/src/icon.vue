@@ -2,6 +2,7 @@
   <Icon :size="size" :color="color" :tag="tag">
     <slot />
   </Icon>
+  <div class="box">box</div>
 </template>
 
 <script lang="ts" setup>
@@ -20,4 +21,8 @@ withDefaults(
 )
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.box {
+  color: var(--cc-color-primary);
+}
+</style>
