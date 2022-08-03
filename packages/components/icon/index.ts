@@ -1,8 +1,6 @@
-import _Icon from './src/icon.vue'
 import { withInstall } from '@cc-ui/utils'
+import _Icon from './src/icon.vue'
 const Icon = withInstall(_Icon, 'cc-icon')
-
-export * from './src/props-type'
 
 export default Icon
 

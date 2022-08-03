@@ -1,0 +1,35 @@
+:root {
+  --cc-button-text-color: #606206;
+  --cc-button-font-weight: 500;
+  --cc-button-background-color: #fff;
+  --cc-button-border-color: #dcdfe6;
+}
+
+.cc-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--cc-button-text-color);
+  font-weight: var(--cc-button-font-weight);
+  background: var(--cc-button-background-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  padding: 8px 15px;
+  font-size: var(--cc-text-base);
+  border-radius: var(--cc-border-radius-base);
+  border: 1px solid var(--cc-button-border-color);
+  &--primary {
+    background: var(--cc-color-primary);
+    color: var(--cc-text-white);
+    border-color: var(--cc-color-primary);
+  }
+}
