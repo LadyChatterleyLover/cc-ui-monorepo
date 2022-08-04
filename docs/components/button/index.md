@@ -248,3 +248,28 @@ import { SearchOutlined } from '@vicons/antd'
 
 </template>
 </demo>
+
+## Button 属性
+
+| 属性       | 说明             | 类型                                            | 默认值 |
+| :--------- | :--------------- | :---------------------------------------------- | :----- |
+| type       | 按钮类型         | primary \| success \| warning \| danger \| info | -      |
+| size       | 图标尺寸         | small \| large                                  | -      |
+| plain      | 是否是朴素按钮   | boolean                                         | false  |
+| round      | 是否是圆角按钮   | boolean                                         | false  |
+| circle     | 是否是圆形按钮   | boolean                                         | false  |
+| disabled   | 是否是禁用状态   | boolean                                         | false  |
+| nativeType | 原生 button 属性 | button \| submit \| reset                       | button |
+| icon       | 按钮图标         | Component                                       | -      |
+
+## Button 事件
+
+| 事件名 | 说明     | 参数          |
+| :----- | :------- | :------------ |
+| click  | 点击事件 | e: MouseEvent |
+
+## Button 插槽
+
+| 事件名  | 说明     |
+| :------ | :------- |
+| default | 按钮内容 |

@@ -47,6 +47,7 @@ import { nextTick, ref, useSlots } from 'vue'
 import { CopyOutlined } from '@vicons/antd'
 import { useCopy } from '@cc-ui/hooks/useCopy'
 import TurndownService from 'turndown'
+import { Message } from '@cc-ui/components'
 
 const expand = ref(false)
 const source = ref<HTMLDivElement>()
@@ -70,7 +71,7 @@ const handleExpand = () => {
 const handleCopy = () => {
   if (code.value) {
     const { copy } = useCopy(code.value, () => {
-      console.log('copy success')
+      Message.success('复制成功')
     })
     copy()
   }
