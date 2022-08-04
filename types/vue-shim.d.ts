@@ -13,3 +13,8 @@ declare module '*.scss' {
   }
   export default classes
 }
+
+declare module 'turndown' {
+  const turndown: any
+  export default turndown
+}

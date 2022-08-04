@@ -14,7 +14,7 @@ export const useSize = (ns: UseNamespace, size: ComputedRef<SizeProps>) => {
 
 export const useType = (ns: UseNamespace, type: ComputedRef<TypeProps>) => {
   if (type.value === '') {
-    return ''
+    return ns.m('default')
   } else if (type.value === 'primary') {
     return ns.m('primary')
   } else if (type.value === 'success') {

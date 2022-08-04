@@ -10,6 +10,7 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "dev": "pnpm -C play dev",
+    "docs:dev": "pnpm -C docs dev",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 && pretty-quick --check",
     "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json && pretty-quick",
     "lint:style": "stylelint --fix \"packages/**/*.{css,scss}\"",
@@ -27,6 +28,7 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@element-plus/eslint-config": "^0.0.20220801",
+    "@types/turndown": "^5.0.1",
     "@vicons/antd": "^0.12.0",
     "@vicons/fluent": "^0.12.0",
     "@vicons/ionicons4": "^0.12.0",
@@ -52,6 +54,7 @@
     "stylelint-config-recess-order": "^3.0.0",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-prettier": "^2.0.0",
+    "turndown": "^7.1.1",
     "vitest": "^0.20.2"
   },
   "config": {
