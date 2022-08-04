@@ -14,7 +14,7 @@ withDefaults(
   }>(),
   {
     size: 16,
-    color: '#000',
+    color: 'inherit',
     tag: 'span',
   }
 )
