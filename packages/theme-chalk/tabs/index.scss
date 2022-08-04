@@ -1,5 +1,9 @@
 .cc-tabs {
   position: relative;
+  &__wrap {
+    overflow: hidden;
+    white-space: nowrap;
+  }
   &__label {
     display: flex;
     align-items: center;

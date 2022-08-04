@@ -1,36 +1,38 @@
 <template>
   <div :class="[ns.b()]">
-    <div :class="[ns.e('label')]">
-      <div
-        v-if="!type"
-        :class="[ns.e('active-bar')]"
-        :style="{
-          width: activeBarWidth,
-          transform: `translateX(${activeBarTranslate})`,
-        }"
-      />
-      <div
-        v-for="(item, index) in tabPaneList"
-        :id="`tab-${item.name}-${uid}`"
-        :key="item.name"
-        :class="[ns.e('label-item'), ns.m(`${type}`)]"
-        :style="{
-          color:
-            item.name === currentName ? 'var(--cc-color-primary)' : 'inherit',
-          paddingLeft: index === 0 && !type ? 0 : '12px',
-        }"
-        @click="handleClick(item, $event)"
-      >
-        <component :is="item.slot" v-if="item.slot" />
-        <span v-else>{{ item.label }}</span>
+    <div :class="[ns.e('wrap')]">
+      <div :class="[ns.e('label')]">
         <div
-          v-if="closable"
-          :class="[ns.e('close-btn')]"
-          @click.stop="removeTabPane(item.name, index)"
+          v-if="!type"
+          :class="[ns.e('active-bar')]"
+          :style="{
+            width: activeBarWidth,
+            transform: `translateX(${activeBarTranslate})`,
+          }"
+        />
+        <div
+          v-for="(item, index) in tabPaneList"
+          :id="`tab-${item.name}-${uid}`"
+          :key="item.name"
+          :class="[ns.e('label-item'), ns.m(`${type}`)]"
+          :style="{
+            color:
+              item.name === currentName ? 'var(--cc-color-primary)' : 'inherit',
+            paddingLeft: index === 0 && !type ? 0 : '12px',
+          }"
+          @click="handleClick(item, $event)"
         >
-          <cc-icon>
-            <CloseOutlined />
-          </cc-icon>
+          <component :is="item.slot" v-if="item.slot" />
+          <span v-else>{{ item.label }}</span>
+          <div
+            v-if="closable"
+            :class="[ns.e('close-btn')]"
+            @click.stop="removeTabPane(item.name, index)"
+          >
+            <cc-icon>
+              <CloseOutlined />
+            </cc-icon>
+          </div>
         </div>
       </div>
     </div>
