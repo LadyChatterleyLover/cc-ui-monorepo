@@ -28,6 +28,7 @@ const config: UserConfig = {
         items: [
           { text: 'Icon图标', link: '/components/icon/' },
           { text: 'Button按钮', link: '/components/button/' },
+          { text: 'Input输入框', link: '/components/input/' },
           { text: 'Message信息', link: '/components/message/' },
           { text: 'Tabs标签页', link: '/components/tabs/' },
           { text: 'Form表单', link: '/components/form/' },
