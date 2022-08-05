@@ -104,7 +104,7 @@ Message.warning = (options: MessageOptions | string) => {
     })
   }
 }
-Message.danger = (options: MessageOptions | string) => {
+Message.error = (options: MessageOptions | string) => {
   if (typeof options === 'string') {
     Message({
       type: 'danger',

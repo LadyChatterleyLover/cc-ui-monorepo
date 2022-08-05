@@ -20,6 +20,7 @@
     "@cc-ui/components": "workspace:*",
     "@cc-ui/hooks": "workspace:*",
     "@cc-ui/utils": "workspace:*",
+    "async-validator": "^4.2.5",
     "typescript": "^4.7.4",
     "vue": "^3.2.37"
   },

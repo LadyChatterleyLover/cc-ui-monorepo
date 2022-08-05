@@ -15,7 +15,7 @@
       <cc-button type="warning" @click="Message.warning('warning message')">warning</cc-button>
     </div>
     <div style="margin-right: 10px">
-      <cc-button type="danger" @click="Message.danger('danger message')">danger</cc-button>
+      <cc-button type="danger" @click="Message.error('error message')">error</cc-button>
     </div>
     <div style="margin-right: 10px">
       <cc-button type="info" @click="Message('message')">message</cc-button>
@@ -29,7 +29,7 @@
   <cc-button>default</cc-button>
   <cc-button type="success" @click="open1">success</cc-button>
   <cc-button type="warning" @click="open2">warning</cc-button>
-  <cc-button type="danger" @click="open3">danger</cc-button>
+  <cc-button type="danger" @click="open3">error</cc-button>
   <cc-button type="info" @click="open4">message</cc-button>
 </template>
 
@@ -43,7 +43,7 @@ const open2 = () => {
   Message.warning('warning message')
 }
 const open3 = () => {
-  Message.danger('danger message')
+  Message.error('error message')
 }
 const open4 = () => {
   Message('message')
@@ -65,7 +65,7 @@ const open4 = () => {
       <cc-button type="warning" @click="Message.warning({message: 'warning message', showClose: true})">warning</cc-button>
     </div>
     <div style="margin-right: 10px">
-      <cc-button type="danger" @click="Message.danger({message: 'danger message', showClose: true})">danger</cc-button>
+      <cc-button type="danger" @click="Message.error({message: 'error message', showClose: true})">error</cc-button>
     </div>
     <div style="margin-right: 10px">
       <cc-button type="info" @click="Message({message: 'message', showClose: true})">message</cc-button>
@@ -79,7 +79,7 @@ const open4 = () => {
   <cc-button>default</cc-button>
   <cc-button type="success" @click="open1">success</cc-button>
   <cc-button type="warning" @click="open2">warning</cc-button>
-  <cc-button type="danger" @click="open3">danger</cc-button>
+  <cc-button type="danger" @click="open3">error</cc-button>
   <cc-button type="info" @click="open4">message</cc-button>
 </template>
 
@@ -99,8 +99,8 @@ const open2 = () => {
   })
 }
 const open3 = () => {
-  Message.danger({
-    message: 'danger message',
+  Message.error({
+    message: 'error message',
     showClose: true,
   })
 }

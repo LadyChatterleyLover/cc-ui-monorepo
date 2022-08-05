@@ -112,7 +112,7 @@ const props = withDefaults(
     showWordLimit?: boolean
     prefixIcon?: Component
     suffixIcon?: Component
-    rows: number | string
+    rows?: number | string
   }>(),
   {
     type: 'text',

@@ -21,6 +21,7 @@ importers:
       '@vitejs/plugin-vue': ^3.0.1
       '@vitejs/plugin-vue-jsx': ^2.0.0
       '@vue/test-utils': ^2.0.2
+      async-validator: ^4.2.5
       commitlint: ^17.0.3
       cz-customizable: ^6.9.1
       eslint: ^8.21.0
@@ -45,6 +46,7 @@ importers:
       '@cc-ui/components': link:packages/components
       '@cc-ui/hooks': link:packages/hooks
       '@cc-ui/utils': link:packages/utils
+      async-validator: 4.2.5
       typescript: 4.7.4
       vue: 3.2.37
     devDependencies:
@@ -2127,6 +2129,13 @@ packages:
       }
     engines: { node: '>=8' }
     dev: true
+
+  /async-validator/4.2.5:
+    resolution:
+      {
+        integrity: sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==,
+      }
+    dev: false
 
   /asynckit/0.4.0:
     resolution:

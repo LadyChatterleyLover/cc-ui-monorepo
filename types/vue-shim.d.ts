@@ -18,3 +18,8 @@ declare module 'turndown' {
   const turndown: any
   export default turndown
 }
+
+declare module 'async-validator' {
+  const validator: any
+  export default validator
+}
