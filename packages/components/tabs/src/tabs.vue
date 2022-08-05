@@ -198,6 +198,23 @@ const handleNext = () => {
 }
 
 watch(
+  () => props.modelValue,
+  (val) => {
+    currentName.value = val
+    emits('tab-change', val)
+  }
+)
+watch(
+  () => currentName.value,
+  (val) => {
+    nextTick(() => {
+      setActiveBarStyle(val)
+    })
+  },
+  { immediate: true }
+)
+
+watch(
   () => tabPaneList.value,
   (val) => {
     let width = 0
@@ -220,23 +237,6 @@ watch(
     })
   },
   { deep: true }
-)
-
-watch(
-  () => props.modelValue,
-  (val) => {
-    currentName.value = val
-    emits('tab-change', val)
-  }
-)
-watch(
-  () => currentName.value,
-  (val) => {
-    nextTick(() => {
-      setActiveBarStyle(val)
-    })
-  },
-  { immediate: true }
 )
 
 provide(TabsInjectionKey, {
