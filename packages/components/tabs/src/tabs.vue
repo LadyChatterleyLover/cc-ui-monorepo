@@ -1,37 +1,70 @@
 <template>
   <div :class="[ns.b()]">
-    <div :class="[ns.e('label')]">
-      <div
-        v-if="!type"
-        :class="[ns.e('active-bar')]"
-        :style="{
-          width: activeBarWidth,
-          transform: `translateX(${activeBarTranslate})`,
-        }"
-      />
-      <div
-        v-for="(item, index) in tabPaneList"
-        :id="`tab-${item.name}-${uid}`"
-        :key="item.name"
-        :class="[ns.e('label-item'), ns.m(`${type}`)]"
-        :style="{
-          color:
-            item.name === currentName ? 'var(--cc-color-primary)' : 'inherit',
-          paddingLeft: index === 0 && !type ? 0 : '12px',
-        }"
-        @click="handleClick(item, $event)"
-      >
-        <component :is="item.slot" v-if="item.slot" />
-        <span v-else>{{ item.label }}</span>
+    <div
+      ref="wrap"
+      :class="[ns.e('wrap')]"
+      :style="{ padding: isOverflow ? '0 20px' : '0' }"
+    >
+      <div v-if="isOverflow" :class="[ns.e('icon-left')]" @click="handlePrev">
+        <cc-icon>
+          <LeftOutlined />
+        </cc-icon>
+      </div>
+      <div style="overflow: hidden">
         <div
-          v-if="closable"
-          :class="[ns.e('close-btn')]"
-          @click.stop="removeTabPane(item.name, index)"
+          ref="label"
+          :class="[ns.e('label')]"
+          :style="{ transform: `translateX(${translateX}px)` }"
         >
-          <cc-icon>
-            <CloseOutlined />
-          </cc-icon>
+          <div
+            v-if="!type"
+            :class="[ns.e('active-bar')]"
+            :style="{
+              width: activeBarWidth,
+              transform: `translateX(${activeBarTranslate})`,
+            }"
+          />
+          <div
+            v-for="(item, index) in tabPaneList"
+            :id="`tab-${item.name}-${uid}`"
+            :key="item.name"
+            :class="[
+              ns.e('label-item'),
+              ns.m(`${type}`),
+              ,
+              { 'is-disabled': item.disabled },
+            ]"
+            :style="{
+              color:
+                item.name === currentName
+                  ? 'var(--cc-color-primary)'
+                  : 'inherit',
+              paddingLeft: index === 0 && !type ? 0 : '12px',
+            }"
+            @click="handleClick(item, $event)"
+          >
+            <component :is="item.slot" v-if="item.slot" />
+            <span v-else>{{ item.label }}</span>
+            <div
+              v-if="closable || item.closable"
+              :class="[ns.e('close-btn')]"
+              @click.stop="removeTabPane(item.name, index)"
+            >
+              <cc-icon>
+                <CloseOutlined />
+              </cc-icon>
+            </div>
+          </div>
         </div>
+      </div>
+      <div
+        v-if="isOverflow"
+        :class="[ns.e('icon-right')]"
+        @click.stop="handleNext"
+      >
+        <cc-icon>
+          <RightOutlined />
+        </cc-icon>
       </div>
     </div>
     <div :class="[ns.e('content')]">
@@ -50,7 +83,7 @@ import {
   watch,
 } from 'vue'
 import { useNamespace } from '@cc-ui/hooks/useNamespace'
-import { CloseOutlined } from '@vicons/antd'
+import { CloseOutlined, LeftOutlined, RightOutlined } from '@vicons/antd'
 import { TabsInjectionKey } from './constants'
 import type { TabPaneContext } from '../types'
 
@@ -84,8 +117,15 @@ const tabPaneList = ref<TabPaneContext[]>([])
 const currentName = ref<string | number>(props.modelValue)
 const activeBarWidth = ref<string>('')
 const activeBarTranslate = ref<string>('')
+const wrap = ref<HTMLDivElement>()
+const label = ref<HTMLDivElement>()
+const isOverflow = ref<boolean>(false)
+const translateX = ref<number>(0)
 
 const addTabPaneContext = (context: TabPaneContext) => {
+  if (context.disabled) {
+    return
+  }
   tabPaneList.value.push(context)
 }
 
@@ -103,6 +143,9 @@ const removeTabPane = (name: string | number, index: number) => {
 }
 
 const handleClick = (item: TabPaneContext, e: Event) => {
+  if (item.disabled) {
+    return
+  }
   currentName.value = item.name
   setActiveBarStyle(currentName.value, true)
   emits('tab-click', item, e)
@@ -126,6 +169,58 @@ const setActiveBarStyle = (currentName: string | number, flag = false) => {
     }
   }
 }
+
+const handlePrev = () => {
+  translateX.value = 0
+}
+
+const handleNext = () => {
+  nextTick(() => {
+    const wrapWidth = Number(
+      window
+        .getComputedStyle(wrap.value as Element, null)
+        .width.replace('px', '')
+    )
+    let width = 0
+    for (let i = 0; i < tabPaneList.value.length; i++) {
+      width += Number(
+        window
+          .getComputedStyle(
+            document.querySelector(
+              `#tab-${tabPaneList.value[i].name}-${uid}`
+            ) as Element
+          )
+          .width.replace('px', '')
+      )
+    }
+    translateX.value = -(width - wrapWidth + 20 * 2)
+  })
+}
+
+watch(
+  () => tabPaneList.value,
+  (val) => {
+    let width = 0
+    nextTick(() => {
+      const wrapWidth = Number(
+        window
+          .getComputedStyle(wrap.value as Element, null)
+          .width.replace('px', '')
+      )
+      val.forEach((item) => {
+        width += Number(
+          window
+            .getComputedStyle(
+              document.querySelector(`#tab-${item.name}-${uid}`) as Element
+            )
+            .width.replace('px', '')
+        )
+      })
+      isOverflow.value = width > wrapWidth
+    })
+  },
+  { deep: true }
+)
 
 watch(
   () => props.modelValue,

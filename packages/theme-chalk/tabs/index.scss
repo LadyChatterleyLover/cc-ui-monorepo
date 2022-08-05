@@ -1,10 +1,37 @@
 .cc-tabs {
   position: relative;
+  &.is-disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+  &__wrap {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+  }
+  &__icon-left {
+    position: absolute;
+    cursor: pointer;
+    line-height: 44px;
+    font-size: 12px;
+    left: 0px;
+    z-index: 100;
+  }
+  &__icon-right {
+    position: absolute;
+    cursor: pointer;
+    line-height: 44px;
+    font-size: 12px;
+    right: 0px;
+    z-index: 100;
+  }
   &__label {
     display: flex;
     align-items: center;
     margin-bottom: 16px;
     position: relative;
+    white-space: nowrap;
+    transition: all 0.3s linear;
     &::after {
       content: '';
       position: absolute;
@@ -19,7 +46,7 @@
       position: relative;
       box-sizing: border-box;
       flex-shrink: 1;
-      padding: 12px 16px;
+      padding: 0 20px;
       line-height: 32px;
       cursor: pointer;
       font-size: var(--cc-text-base);

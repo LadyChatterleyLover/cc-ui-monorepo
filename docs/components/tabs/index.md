@@ -28,7 +28,7 @@
   const addTab = (targetName) => {
     const newTabName = `${++tabIndex}`
     editableTabs.value.push({
-      title: 'New Tab',
+      title: `New Tab`,
       name: newTabName,
       content: 'New Tab content',
     })
@@ -223,3 +223,41 @@ const handleClick = (tab, event) => {
 
 </template>
 </demo>
+
+## Tabs 属性
+
+| 属性     | 说明                      | 类型             | 默认值           |
+| :------- | :------------------------ | :--------------- | :--------------- |
+| v-model  | 绑定值，选中选项卡的 name | string \| number | -                |
+| type     | 风格类型                  | string           | card/border-card |
+| closable | 标签是否可关闭            | boolean          | false            |
+
+## Tabs 事件
+
+| 事件名     | 说明                    | 回调参数                           |
+| :--------- | :---------------------- | :--------------------------------- |
+| tab-click  | tab 被选中时触发        | (pane: TabsPaneContext, ev: Event) |
+| tab-change | `activeName` 改变时触发 | (name: TabPanelName)               |
+| tab-remove | 点击 tab 移除按钮时触发 | (name: TabPanelName)               |
+
+## Tabs 插槽
+
+| 插槽名  | 说明         | 子标签   |
+| :------ | :----------- | :------- |
+| default | 默认插槽内容 | Tab-Pane |
+
+## Tab-pane 属性
+
+| 属性     | 说明                                              | 类型             | 默认值 |
+| :------- | :------------------------------------------------ | :--------------- | :----- |
+| label    | 选项卡标题                                        | string           | -      |
+| disabled | 是否禁用                                          | boolean          | false  |
+| name     | 与选项卡绑定值 value 对应的标识符，表示选项卡别名 | string \| number | 必填   |
+| closable | 标签是否可关闭                                    | boolean          | false  |
+
+## Tab-pane 插槽
+
+| 插槽名  | 说明                |
+| :------ | :------------------ |
+| default | Tab-pane 的内容     |
+| label   | Tab-pane 的标题内容 |
