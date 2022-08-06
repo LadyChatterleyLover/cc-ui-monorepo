@@ -2,11 +2,16 @@
   "name": "@cc-ui/utils",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
+  "license": "ISC",
   "author": "",
-  "license": "ISC"
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "unbuild"
+  },
+  "dependencies": {
+    "vue": "^3.2.37"
+  }
 }

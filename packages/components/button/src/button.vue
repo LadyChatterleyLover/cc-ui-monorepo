@@ -15,14 +15,16 @@
     <cc-icon v-if="icon">
       <component :is="icon" :color="type ? '#fff' : '#000'" />
     </cc-icon>
-    <span :style="{ marginLeft: icon ? '8px' : '0' }"><slot /></span>
+    <span v-if="$slots.default" :style="{ marginLeft: icon ? '8px' : '0' }"
+      ><slot
+    /></span>
   </button>
 </template>
 
 <script lang="ts" setup>
 import { type Component, computed } from 'vue'
+import { useNamespace } from '@cc-ui/hooks'
 import { useSize, useType } from '../hooks/useButton'
-import { useNamespace } from '../../../hooks/useNamespace'
 import type { SizeProps, TypeProps } from '../../types'
 
 const ns = useNamespace('button')
