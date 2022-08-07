@@ -45,9 +45,9 @@
 <script setup lang="ts">
 import { nextTick, ref, useSlots } from 'vue'
 import { CopyOutlined } from '@vicons/antd'
-import { useCopy } from '@cc-ui/hooks/useCopy'
+import { useCopy } from 'cc-ui-plus/hooks'
 import TurndownService from 'turndown'
-import { Message } from '@cc-ui/components'
+import { Message } from 'cc-ui-plus'
 
 const expand = ref(false)
 const source = ref<HTMLDivElement>()

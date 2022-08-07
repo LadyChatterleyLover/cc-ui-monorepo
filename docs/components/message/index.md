@@ -3,7 +3,7 @@
 ## 基础用法
 
 <script setup>
-  import { Message } from '@cc-ui/components'
+  import { Message } from 'cc-ui-plus'
 </script>
 
 <demo>

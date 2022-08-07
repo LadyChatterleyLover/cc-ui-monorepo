@@ -4,7 +4,7 @@
 
 <script setup>
   import { ref } from 'vue'
-  import { Message } from '@cc-ui/components'
+  import { Message } from 'cc-ui-plus'
   const form = ref()
   const model = ref({
     username: '',
@@ -53,7 +53,7 @@
     <cc-input v-model="model.username" placeholder="请输入用户名" />
   </cc-form-item>
   <cc-form-item prop="password" label="密码">
-    <cc-input v-model="model.password" placeholder="请输入密码" />
+    <cc-input v-model="model.password" show-password placeholder="请输入密码" />
   </cc-form-item>
   <cc-form-item>
     <cc-button @click="submit">提交</cc-button>

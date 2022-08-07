@@ -11,6 +11,9 @@
     "build": "vitepress build",
     "serve": "vitepress serve"
   },
+  "dependencies": {
+    "cc-ui-plus": "^0.0.6"
+  },
   "devDependencies": {
     "vitepress": "1.0.0-alpha.4"
   }

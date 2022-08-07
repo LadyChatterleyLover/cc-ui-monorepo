@@ -9,7 +9,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "cc-ui-plus": "^0.0.5",
+    "cc-ui-plus": "^0.0.6",
     "vue": "^3.2.37"
   },
   "devDependencies": {

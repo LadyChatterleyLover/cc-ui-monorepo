@@ -144,7 +144,7 @@ const setValidateBlurFlag = inject<((n: number) => void) | undefined>(
 const inputFlag = ref(0)
 const blurFlag = ref(0)
 const inputRef = ref<HTMLInputElement>()
-const isPassword = ref<boolean>(false)
+const isPassword = ref<boolean>(props.showPassword)
 const inputValue = ref<string>(props.modelValue)
 
 const foucs = async () => {

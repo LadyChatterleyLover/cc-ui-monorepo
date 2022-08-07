@@ -1,6 +1,6 @@
-import Icon from './icon'
-import Button from './button'
-import Message from './message/src/message'
+import Icon from './components/icon'
+import Button from './components/button'
+import Message from './components/message/src/message'
 import type { App } from 'vue'
 declare const Tabs: import('@cc-ui/utils').SFCWithPlugin<
     import('vue').DefineComponent<
@@ -65,11 +65,11 @@ declare const Tabs: import('@cc-ui/utils').SFCWithPlugin<
         isOverflow: import('vue').Ref<boolean>
         translateX: import('vue').Ref<number>
         addTabPaneContext: (
-          context: import('./tabs/types').TabPaneContext
+          context: import('./components/tabs/types').TabPaneContext
         ) => void
         removeTabPane: (name: string | number, index: number) => void
         handleClick: (
-          item: import('./tabs/types').TabPaneContext,
+          item: import('./components/tabs/types').TabPaneContext,
           e: Event
         ) => void
         setActiveBarStyle: (
@@ -203,7 +203,7 @@ declare const Tabs: import('@cc-ui/utils').SFCWithPlugin<
       },
       {
         addTabPaneContext: (
-          instance: import('./tabs/types').TabPaneContext
+          instance: import('./components/tabs/types').TabPaneContext
         ) => void
         currentName: import('vue').ComputedRef<string | number>
         props: {
@@ -278,16 +278,16 @@ declare const Form: import('@cc-ui/utils').SFCWithPlugin<
       {
         props: {
           model: Record<string, any>
-          rules?: import('./form/src/form.vue').Rules | undefined
+          rules?: import('./components/form/src/form.vue').Rules | undefined
           labelWidth: string | number
           inline: boolean
         }
         filedList: import('vue').Ref<any[]>
         addFiled: (filed: any) => void
-        validate: (callback: import('./form/types').Callback) => void
+        validate: (callback: import('./components/form/types').Callback) => void
         validateField: (
           prop: string,
-          callback: import('./form/types').Callback
+          callback: import('./components/form/types').Callback
         ) => void
         resetFields: () => void
         clearValidate: (prop: string) => void
@@ -378,8 +378,8 @@ declare const Form: import('@cc-ui/utils').SFCWithPlugin<
         validateChangeFlag: import('vue').Ref<number>
         validateBlurFlag: import('vue').Ref<number>
         rules: import('vue').Ref<
-          | import('./form/types').Rules
-          | import('./form/types').Rules[]
+          | import('./components/form/types').Rules
+          | import('./components/form/types').Rules[]
           | undefined
         >
         initValue: import('vue').Ref<any>
@@ -391,12 +391,13 @@ declare const Form: import('@cc-ui/utils').SFCWithPlugin<
         model: import('vue').ComputedRef<Record<string, any>> | undefined
         parentRules:
           | import('vue').ComputedRef<
-              import('./form/types').Rules | import('./form/types').Rules[]
+              | import('./components/form/types').Rules
+              | import('./components/form/types').Rules[]
             >
           | undefined
         addFiled: any
         isRequired: import('vue').ComputedRef<
-          false | import('./form/types').Rules | undefined
+          false | import('./components/form/types').Rules | undefined
         >
         labelAlignValue: import('vue').ComputedRef<
           'flex-start' | 'center' | 'flex-end'

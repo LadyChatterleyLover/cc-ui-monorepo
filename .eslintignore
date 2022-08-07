@@ -5,8 +5,8 @@ packages/**/build/*
 packages/**/lib/*
 packages/**/src/*.d.ts
 packages/**/es/*
-dist
-lib
+/dist
+/lib
 
 packages/**/__tests__/*
 **.json
