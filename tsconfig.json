@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "preserve",
-    "outDir": "dist",
+    "outDir": "lib",
     "target": "es2018",
     "module": "esnext",
     "baseUrl": ".",

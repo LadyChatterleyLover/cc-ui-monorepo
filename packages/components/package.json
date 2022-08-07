@@ -2,11 +2,25 @@
   "name": "@cc-ui/components",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "keywords": [
+    "vue3",
+    "vue3 components",
+    "vue3 hooks",
+    "vue3 ui",
+    "cc-ui",
+    "vue ui"
+  ],
+  "license": "ISC",
   "author": "",
-  "license": "ISC"
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  }
 }

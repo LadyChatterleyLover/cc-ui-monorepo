@@ -1,0 +1,21 @@
+{
+  "name": "cc-ui-plus",
+  "version": "0.0.5",
+  "main": "es/index.umd.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
+  "author": {
+    "name": "summer"
+  },
+  "keywords": [
+    "vue components",
+    "vue3 components",
+    "vue ui",
+    "vue3 ui",
+    "typescript",
+    "封装组件",
+    "vue-components",
+    "vue3-components",
+    "cc-ui"
+  ]
+}

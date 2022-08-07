@@ -1,7 +1,6 @@
 import { withInstall } from '@cc-ui/utils'
 import _Tabs from './src/tabs.vue'
 import _TabPane from './src/tab-pane.vue'
-import '@cc-ui/theme-chalk/tabs/index.scss'
 
 const Tabs = withInstall(_Tabs, 'cc-tabs')
 const TabPane = withInstall(_TabPane, 'cc-tab-pane')

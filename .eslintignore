@@ -4,6 +4,9 @@ packages/**/dist/*
 packages/**/build/*
 packages/**/lib/*
 packages/**/src/*.d.ts
+packages/**/es/*
+dist
+lib
 
 packages/**/__tests__/*
 **.json

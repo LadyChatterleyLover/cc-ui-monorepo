@@ -205,16 +205,3 @@ defineExpose({
   blur,
 })
 </script>
-
-<style lang="scss" scoped>
-.cc-input {
-  &-wrpper {
-    border: 1px solid #dcdfe6;
-  }
-  &-input {
-    &:focus {
-      border-color: #0081ff;
-    }
-  }
-}
-</style>

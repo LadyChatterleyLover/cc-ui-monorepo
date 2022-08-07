@@ -46,7 +46,7 @@ import {
   InfoCircleOutlined,
 } from '@vicons/antd'
 import { Warning } from '@vicons/carbon'
-import { Icon as CcIcon } from '@cc-ui/components'
+import CcIcon from '../../icon'
 import type { MessageType } from '../types'
 
 const ns = useNamespace('message')

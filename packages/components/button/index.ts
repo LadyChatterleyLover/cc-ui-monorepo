@@ -1,6 +1,5 @@
 import { withInstall } from '@cc-ui/utils'
 import _Button from './src/button.vue'
-import '@cc-ui/theme-chalk/button/index.scss'
 
 const Button = withInstall(_Button, 'cc-button')
 

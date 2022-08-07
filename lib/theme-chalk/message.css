@@ -1,0 +1,70 @@
+:root {
+  --cc-message-border-color: #e1f3d8;
+  --cc-message-bg-color: #fef9eb;
+  --cc-message-text-color: #fff;
+  --cc-message-close-icon-color: #a8abb2;
+  --cc-message-close-icon-size: 16;
+}
+.cc-message {
+  display: flex;
+  align-items: center;
+  color: var(--cc-text-white);
+  position: fixed;
+  border-radius: var(--cc-border-radius-base);
+  height: 28px;
+  left: 50%;
+  min-width: 380px;
+  padding: 20px;
+  transform: translateX(-50%);
+  z-index: var(--cc-z-index);
+  box-sizing: border-box;
+  border-color: var(--cc-message-border-color);
+  background: var(--cc-message-bg-color);
+  color: var(--cc-message-text-color);
+}
+.cc-message--center {
+  justify-content: center;
+}
+.cc-message__close-btn {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.cc-message__icon {
+  position: relative;
+  top: 3px;
+  margin-right: 10px;
+}
+.cc-message.bg-success {
+  --cc-message-bg-color: var(--cc-color-success-light-9);
+  --cc-message-border-color: var(--cc-color-success-light-8);
+  --cc-message-text-color: var(--cc-color-success);
+}
+.cc-message.bg-warning {
+  --cc-message-bg-color: var(--cc-color-warning-light-9);
+  --cc-message-border-color: var(--cc-color-warning-light-8);
+  --cc-message-text-color: var(--cc-color-warning);
+}
+.cc-message.bg-danger {
+  --cc-message-bg-color: var(--cc-color-error-light-9);
+  --cc-message-border-color: var(--cc-color-error-light-8);
+  --cc-message-text-color: var(--cc-color-error);
+}
+.cc-message.bg-info {
+  --cc-message-bg-color: var(--cc-color-info-light-9);
+  --cc-message-border-color: var(--cc-color-info-light-8);
+  --cc-message-text-color: var(--cc-color-info);
+}
+.cc-message-enter-from,
+.cc-message-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}
+.cc-message-enter-active {
+  transition: all 0.3s ease-in;
+}
+.cc-message-leave-active {
+  transition: all 0.3s ease-out;
+}

@@ -1,0 +1,32 @@
+.cc-form-item {
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.cc-form-item__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.cc-form-item__label-required.cc-form-item-label::before {
+  content: '*';
+  color: red;
+  margin-right: 4px;
+}
+.cc-form-item__content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 32px;
+  font-size: 14px;
+}
+.cc-form-item__error {
+  font-size: 12px;
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  line-height: 20px;
+}
