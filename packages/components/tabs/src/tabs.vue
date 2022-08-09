@@ -82,8 +82,9 @@ import {
   ref,
   watch,
 } from 'vue'
-import { useNamespace } from '@cc-ui/hooks/useNamespace'
+import { useNamespace } from '@cc-ui-plus/hooks/useNamespace'
 import { CloseOutlined, LeftOutlined, RightOutlined } from '@vicons/antd'
+import CcIcon from '../../icon'
 import { TabsInjectionKey } from './constants'
 import type { TabPaneContext } from '../types'
 
@@ -153,20 +154,22 @@ const handleClick = (item: TabPaneContext, e: Event) => {
 
 const setActiveBarStyle = (currentName: string | number, flag = false) => {
   if (currentName) {
-    const dom = document.querySelector(`#tab-${currentName}-${uid}`)
-    const style: CSSStyleDeclaration = window.getComputedStyle(
-      dom as Element,
-      null
-    )
-    const paddingLeft = Number(style.paddingLeft.replace('px', ''))
-    const paddingRight = Number(style.paddingRight.replace('px', ''))
-    const width = Number(style.width.replace('px', ''))
-    activeBarWidth.value = `${width - paddingLeft - paddingRight}px`
-    if (flag) {
-      activeBarTranslate.value = `${
-        (dom as HTMLDivElement).offsetLeft + paddingLeft
-      }px`
-    }
+    nextTick(() => {
+      const dom = document.querySelector(`#tab-${currentName}-${uid}`)
+      const style: CSSStyleDeclaration = window.getComputedStyle(
+        dom as Element,
+        null
+      )
+      const paddingLeft = Number(style.paddingLeft.replace('px', ''))
+      const paddingRight = Number(style.paddingRight.replace('px', ''))
+      const width = Number(style.width.replace('px', ''))
+      activeBarWidth.value = `${width - paddingLeft - paddingRight}px`
+      if (flag) {
+        activeBarTranslate.value = `${
+          (dom as HTMLDivElement).offsetLeft + paddingLeft
+        }px`
+      }
+    })
   }
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "@cc-ui/components",
+  "name": "@cc-ui-plus/components",
   "version": "1.0.0",
   "description": "",
   "keywords": [
@@ -17,9 +17,9 @@
     "es",
     "dist"
   ],
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "types": "es/index.d.ts",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "vite build"
   }

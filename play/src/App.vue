@@ -1,25 +1,21 @@
 <template>
-  <h1>cc-ui</h1>
   <div>
-    <cc-icon :size="40">
-      <AccountBookOutlined />
-    </cc-icon>
-  </div>
-  <div style="display: flex">
-    <div style="margin-right: 10px"><cc-button>default</cc-button></div>
-    <div style="margin-right: 10px">
-      <cc-button type="primary" @click="handleClick">primary</cc-button>
-    </div>
+    <cc-tabs v-model="activeName" @tab-click="handleClick">
+      <cc-tab-pane label="User" name="first">User Content</cc-tab-pane>
+      <cc-tab-pane label="Config" name="second">Config Content</cc-tab-pane>
+      <cc-tab-pane label="Role" name="third">Role Content</cc-tab-pane>
+      <cc-tab-pane label="Task" name="fourth">Task Content</cc-tab-pane>
+    </cc-tabs>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { AccountBookOutlined } from '@vicons/antd'
-import { Message } from 'cc-ui-plus'
+<script setup lang="ts">
+import { ref } from 'vue'
+const activeName = ref('first')
 
-const handleClick = () => {
-  Message.success('success')
+const handleClick = (tab: any, event: Event) => {
+  console.log(tab, event)
 }
 </script>
 
-<style></style>
+<style scoped></style>

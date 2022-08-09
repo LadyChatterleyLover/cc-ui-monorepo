@@ -1,4 +1,4 @@
-import { withInstall } from '@cc-ui/utils'
+import { withInstall } from '@cc-ui-plus/utils'
 import _Button from './src/button.vue'
 
 const Button = withInstall(_Button, 'cc-button')

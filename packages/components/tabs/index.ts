@@ -1,4 +1,4 @@
-import { withInstall } from '@cc-ui/utils'
+import { withInstall } from '@cc-ui-plus/utils'
 import _Tabs from './src/tabs.vue'
 import _TabPane from './src/tab-pane.vue'
 

@@ -38,7 +38,7 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { useNamespace } from '@cc-ui/hooks/useNamespace'
+import { useNamespace } from '@cc-ui-plus/hooks/useNamespace'
 import {
   CheckCircleOutlined,
   CloseCircleOutlined,

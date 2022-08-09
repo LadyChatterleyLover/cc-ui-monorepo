@@ -1,4 +1,4 @@
-import { withInstall } from '@cc-ui/utils'
+import { withInstall } from '@cc-ui-plus/utils'
 import _Form from './src/form.vue'
 import _FormItem from './src/form-item.vue'
 const Form = withInstall(_Form, 'cc-form')

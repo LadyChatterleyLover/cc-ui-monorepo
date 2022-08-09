@@ -1,9 +1,9 @@
 {
   "name": "cc-ui-plus",
-  "version": "0.0.6",
-  "main": "es/index.umd.js",
-  "module": "es/index.mjs",
-  "types": "es/index.d.ts",
+  "version": "0.2.7",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "author": {
     "name": "summer"
   },
@@ -17,5 +17,9 @@
     "vue-components",
     "vue3-components",
     "cc-ui"
-  ]
+  ],
+  "dependencies": {
+    "@cc-ui-plus/utils": "^1.0.0",
+    "@cc-ui-plus/hooks": "^1.0.0"
+  }
 }
