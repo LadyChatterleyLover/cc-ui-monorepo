@@ -1,4 +1,5 @@
 import type { UserConfig } from 'vitepress'
+console.log('process', process)
 
 const config: UserConfig = {
   title: '',
