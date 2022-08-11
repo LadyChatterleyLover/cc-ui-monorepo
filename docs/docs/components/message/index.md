@@ -5,6 +5,9 @@
 
 <script setup>
   import { CcMessage as Message } from 'cc-ui-plus'
+  import {defineAsyncComponent} from 'vue'
+
+  const CcButton = defineAsyncComponent(() => import('cc-ui-plus/dist/button'))
 </script>
 
 <demo>

@@ -2,8 +2,14 @@
 # Tabs 标签页
 
 <script setup>
-  import { ref } from 'vue'
+  import { ref, defineAsyncComponent } from 'vue'
   import { CalendarOutlined } from '@vicons/antd'
+
+  const CcTabs = defineAsyncComponent(() => import('cc-ui-plus/dist/tabs'))
+  const CcTabPane = defineAsyncComponent(() => import('cc-ui-plus/dist/tabs'))
+  const CcIcon = defineAsyncComponent(() => import('cc-ui-plus/dist/icon'))
+  const CcButton = defineAsyncComponent(() => import('cc-ui-plus/dist/button'))
+
   const activeName = ref('first')
 
   const handleClick = (tab, event) => {

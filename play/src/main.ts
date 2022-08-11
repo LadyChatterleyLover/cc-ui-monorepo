@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import CcUI from '@cc-ui-plus/components'
+import CcUI from 'cc-ui-plus'
 import 'cc-ui-plus/theme-chalk/index.css'
 import App from './App.vue'
 

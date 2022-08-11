@@ -4,8 +4,12 @@
 ## 基本用法
 
 <script setup>
-  import { ref } from 'vue'
+  import { ref, defineAsyncComponent } from 'vue'
   import { SearchOutlined } from '@vicons/antd'
+
+  const CcInput = defineAsyncComponent(() => import('cc-ui-plus/dist/input'))
+  const CcIcon = defineAsyncComponent(() => import('cc-ui-plus/dist/icon'))
+
   const value1 = ref('')
   const value2 = ref('')
   const value3 = ref('')

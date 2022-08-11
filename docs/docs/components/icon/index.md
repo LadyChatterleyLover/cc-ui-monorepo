@@ -7,7 +7,10 @@
 可以像使用组件一样使用图标。
 
 <script setup>
-import { AirplaneOutline, AccessibilityOutline, AddCircleOutline } from '@vicons/ionicons5'
+  import { AirplaneOutline, AccessibilityOutline, AddCircleOutline } from '@vicons/ionicons5'
+  import {defineAsyncComponent} from 'vue'
+
+  const CcIcon = defineAsyncComponent(() => import('cc-ui-plus/dist/icon'))
 </script>
 
 <demo>

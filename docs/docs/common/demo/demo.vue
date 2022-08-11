@@ -41,11 +41,13 @@
 </template>
 
 <script setup lang="ts">
-import { nextTick, ref, useSlots } from 'vue'
+import { defineAsyncComponent, nextTick, ref, useSlots } from 'vue'
 import { CopyOutlined } from '@vicons/antd'
 import { useCopy } from 'cc-ui-plus/hooks'
 import TurndownService from 'turndown'
 import { CcMessage as Message } from 'cc-ui-plus'
+
+const CcIcon = defineAsyncComponent(() => import('cc-ui-plus/dist/icon'))
 
 const expand = ref(false)
 const source = ref<HTMLDivElement>()

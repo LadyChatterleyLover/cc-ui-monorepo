@@ -3,7 +3,11 @@
 ## 基础用法
 
 <script setup>
+  import {defineAsyncComponent} from 'vue'
   import { SearchOutlined } from '@vicons/antd'
+
+  const CcButton = defineAsyncComponent(() => import('cc-ui-plus/dist/button'))
+  const CcIcon = defineAsyncComponent(() => import('cc-ui-plus/dist/icon'))
 </script>
 
 <demo>

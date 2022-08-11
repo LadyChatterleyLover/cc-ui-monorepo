@@ -4,7 +4,13 @@
 ## 基础用法
 
 <script setup>
-  import { ref } from 'vue'
+  import { ref, defineAsyncComponent } from 'vue'
+
+  const CcIcon = defineAsyncComponent(() => import('cc-ui-plus/dist/icon'))
+  const CcButton = defineAsyncComponent(() => import('cc-ui-plus/dist/button'))
+  const CcInput = defineAsyncComponent(() => import('cc-ui-plus/dist/input'))
+  const CcForm = defineAsyncComponent(() => import('cc-ui-plus/dist/form'))
+  const CcFormItem = defineAsyncComponent(() => import('cc-ui-plus/dist/form'))
 
   const form = ref()
   const model = ref({
