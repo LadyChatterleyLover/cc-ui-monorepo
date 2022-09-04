@@ -8,7 +8,7 @@ on:
 
 jobs:
   Lint:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: action/checkout@v2
       - uses: pnpm/action-setup@v2.1.0
@@ -19,7 +19,7 @@ jobs:
       - name: Lint
         run: pnpm run lint
   Test:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: action/checkout@v2
       - uses: pnpm/action-setup@v2.1.0
@@ -30,7 +30,7 @@ jobs:
       - name: Lint
         run: pnpm run test
   Build:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: action/checkout@v2
       - uses: pnpm/action-setup@v2.1.0
