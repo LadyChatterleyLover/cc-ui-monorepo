@@ -240,9 +240,13 @@ import { SearchOutlined } from '@vicons/antd'
 
 ```vue
 <template>
-  <cc-button type="primary" size="small">small</cc-button>
-  <cc-button type="primary">default</cc-button>
-  <cc-button type="primary" size="large">large</cc-button>
+  <cc-button type="primary" size="small" :icon="SearchOutlined"
+    >small</cc-button
+  >
+  <cc-button type="primary" :icon="SearchOutlined">default</cc-button>
+  <cc-button type="primary" size="large" :icon="SearchOutlined"
+    >large</cc-button
+  >
 </template>
 
 <script setup>

@@ -12,8 +12,8 @@
 
   const activeName = ref('first')
 
-  const handleClick = (tab, event) => {
-    console.log(tab, event)
+  const handleClick = () => {
+    
   }
 
   let tabIndex = 2
@@ -56,7 +56,7 @@
 
   editableTabsValue.value = activeName
   editableTabs.value = tabs.filter((tab) => tab.name !== targetName)
-  console.log(editableTabs.value)
+
 }
 </script>
 
@@ -81,7 +81,7 @@
 
 ```vue
 <template>
-  <cc-tabs v-model="activeName" @tab-click="handleClick">
+  <cc-tabs v-model="activeName">
     <cc-tab-pane label="User" name="first">User</cc-tab-pane>
     <cc-tab-pane label="Config" name="second">Config</cc-tab-pane>
     <cc-tab-pane label="Role" name="third">Role</cc-tab-pane>
@@ -93,10 +93,6 @@
 import { ref } from 'vue'
 
 const activeName = ref('first')
-
-const handleClick = (tab, event) => {
-  console.log(tab, event)
-}
 </script>
 ```
 
