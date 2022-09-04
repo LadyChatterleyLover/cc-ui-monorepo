@@ -94,7 +94,8 @@ import {
   EyeInvisibleOutlined,
   EyeOutlined,
 } from '@vicons/antd'
-import { useNamespace } from '@cc-ui/hooks/useNamespace'
+import { useNamespace } from '@cc-ui-plus/hooks/useNamespace'
+import CcIcon from '../../icon'
 
 const ns = useNamespace('input')
 

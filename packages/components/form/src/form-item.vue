@@ -41,7 +41,7 @@ import {
   watch,
 } from 'vue'
 import Schema from 'async-validator'
-import { useNamespace } from '@cc-ui/hooks/useNamespace'
+import { useNamespace } from '@cc-ui-plus/hooks/useNamespace'
 import type { RuleItem, Rules } from '../types'
 
 const ns = useNamespace('form-item')

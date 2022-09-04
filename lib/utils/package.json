@@ -1,0 +1,14 @@
+{
+  "name": "@cc-ui-plus/utils",
+  "version": "1.0.0",
+  "description": "utils for cc-ui-plus ",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "keywords": [],
+  "author": "luopei",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

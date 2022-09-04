@@ -1,4 +1,4 @@
-import { withInstall } from '@cc-ui/utils'
+import { withInstall } from '@cc-ui-plus/utils'
 import _Input from './src/input.vue'
 
 const Input = withInstall(_Input, 'cc-input')

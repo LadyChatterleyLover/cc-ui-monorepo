@@ -23,8 +23,9 @@
 
 <script lang="ts" setup>
 import { type Component, computed } from 'vue'
-import { useNamespace } from '@cc-ui/hooks'
+import { useNamespace } from '@cc-ui-plus/hooks'
 import { useSize, useType } from '../hooks/useButton'
+import CcIcon from '../../icon'
 import type { SizeProps, TypeProps } from '../../types'
 
 const ns = useNamespace('button')
