@@ -1,6 +1,4 @@
 {
-    "root": true,
-    "extends": [
-        "@element-plus/eslint-config"
-    ]
+  "root": true,
+  "extends": ["@element-plus/eslint-config"]
 }
